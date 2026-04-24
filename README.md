@@ -3,7 +3,6 @@
 **A zero-cost, fully-typed mock layer for LLM APIs.**  
 Intercept OpenAI and Anthropic calls in your tests without hitting the real API — streaming, tool calls, and custom matchers included.
 
-[![CI](https://github.com/yourusername/llm-mock/actions/workflows/ci.yml/badge.svg)](https://github.com/yourusername/llm-mock/actions)
 [![npm version](https://badge.fury.io/js/llm-mock.svg)](https://www.npmjs.com/package/llm-mock)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
