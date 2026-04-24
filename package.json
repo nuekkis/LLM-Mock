@@ -1,0 +1,94 @@
+{
+  "name": "llm-mock",
+  "version": "1.0.0",
+  "description": "A zero-cost, fully-typed mock layer for LLM APIs (OpenAI, Anthropic, etc.) — streaming, tools, and test matchers included.",
+  "keywords": [
+    "llm",
+    "mock",
+    "openai",
+    "anthropic",
+    "testing",
+    "typescript",
+    "streaming",
+    "ai",
+    "jest",
+    "vitest"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nuekkis/LLM-Mock.git"
+  },
+  "homepage": "https://github.com/nuekkis/LLM-Mock#readme",
+  "bugs": {
+    "url": "https://github.com/nuekkis/LLM-Mock/issues"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./jest": {
+      "import": "./dist/jest.mjs",
+      "require": "./dist/jest.js",
+      "types": "./dist/jest.d.ts"
+    },
+    "./vitest": {
+      "import": "./dist/vitest.mjs",
+      "require": "./dist/vitest.js",
+      "types": "./dist/vitest.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src test --ext .ts",
+    "lint:fix": "eslint src test --ext .ts --fix",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "format:check": "prettier --check \"src/**/*.ts\" \"test/**/*.ts\"",
+    "prepublishOnly": "npm run typecheck && npm run lint && npm run test && npm run build",
+    "release": "changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.0",
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "@vitest/coverage-v8": "^1.0.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.0.0",
+    "prettier": "^3.2.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0",
+    "vitest": "^1.0.0"
+  },
+  "peerDependencies": {
+    "openai": ">=4.0.0",
+    "@anthropic-ai/sdk": ">=0.20.0"
+  },
+  "peerDependenciesMeta": {
+    "openai": {
+      "optional": true
+    },
+    "@anthropic-ai/sdk": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
